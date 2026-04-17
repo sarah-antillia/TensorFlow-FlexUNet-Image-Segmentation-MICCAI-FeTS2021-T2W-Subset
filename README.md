@@ -423,9 +423,6 @@ slice_resize   = (512,512)
 slice_rotation = cv2.ROTATE_90_CLOCKWISE 
 
 mask_overlay  = True
-overlay_alpha = 0.6  
-overlay_beta  = 0.4  
-overlay_gamma = 0
 </pre>
 <hr>
 <b>Acutual Image Segmentation for 2D Slices of a MICCAI-FeTS2021-T2W Validation NIfTI</b><br>
