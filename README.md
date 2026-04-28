@@ -1,7 +1,11 @@
-<h2>TensorFlow-FlexUNet-Image-Segmentation-MICCAI-FeTS2021-T2W-Subset (2026/04/17)</h2>
+<h2>TensorFlow-FlexUNet-Image-Segmentation-MICCAI-FeTS2021-T2W-Subset (Updated: 2026/04/29)</h2>
 
 Sarah T. Arai<br>
 Software Laboratory antillia.com<br>
+<ul>
+<li>2026/04/29: Updated infer3d method of <a href="./src/TensorFlowFlexModel.py">TensorFlowFexModel.py</a>, and ran 5.infer3d.bat.</li>
+<li>2026/04/29: Generated overlays.gif from new maskoverlay PNG files</li>
+</ul>
 <br>
 This is the first experiment of Image Segmentation for MICCAI-FeTS2021-T2W-Subset,
  based on our 
@@ -396,7 +400,7 @@ PNG dataset appear similar to the ground truth masks.<br><br>
 <hr>
 <br>
 <h3>
-6 3D Volume Inference
+6 3D Volume Segmentation
 </h3>
 Please move <b>./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset</b> folder, and run the following bat file to infer images segmentation for 2D slices of 3D volume NIfTI files
  by the Trained-TensorFlowFlexUNet model for MICCAI-FeTS2021-T2W-Subset.<br>
@@ -421,7 +425,6 @@ output_dir    = "./mini_test_3d_output/"
 slice_shape_order = "hwd"
 slice_resize   = (512,512) 
 slice_rotation = cv2.ROTATE_90_CLOCKWISE 
-
 mask_overlay  = True
 </pre>
 <hr>
@@ -439,40 +442,70 @@ Some Slices, Inferred Masks and Mask overlays for a 3D volume <b>FeTS21_Validati
 </tr>
 
 <tr>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/slices/29.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/masks/29.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/overlays/29.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/slices/10029.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/masks/10029.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/overlays/10029.png" width="320" height="auto"></td>
 </tr>
 
 <tr>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/slices/32.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/masks/32.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/overlays/32.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/slices/10032.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/masks/10032.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/overlays/10032.png" width="320" height="auto"></td>
 </tr>
 <tr>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/slices/34.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/masks/34.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/overlays/34.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/slices/10034.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/masks/10034.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/overlays/10034.png" width="320" height="auto"></td>
 </tr>
 <tr>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/slices/73.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/masks/73.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/overlays/73.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/slices/10073.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/masks/10073.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/overlays/10073.png" width="320" height="auto"></td>
 </tr>
 <tr>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/slices/94.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/masks/94.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/overlays/94.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/slices/10094.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/masks/10094.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/overlays/10094.png" width="320" height="auto"></td>
 </tr>
 <tr>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/slices/115.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/masks/115.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/overlays/115.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/slices/10115.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/masks/10115.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/mini_test_3d_output/FeTS21_Validation_0100_t2.nii/overlays/10115.png" width="320" height="auto"></td>
 
 </tr>
 </table>
 <hr>
 <br>
+<h3>
+7 MaskOverlay Video of 3D Volume Segmentation
+</h3>
+Please move to <b>./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset</b> folder, and run the following bat file 
+to generate <b>overlays.mp4</b> or <b>overlay.gif</b> for MaskOverlays of 3D Volume Segmentation. <br>
+<pre>
+>./6.video3d.bat
+</pre>
+This simply runs the following command.
+<pre>
+>python ../../../src/MaskOverlayVideoGenerator.py ./train_eval_infer.config
+</pre>
+<br>
+
+<b>infer3d section </b> in <a href="./projects/TensorFlowFlexUNet/BMICCAI-FeTS2021-T2W-Subset/train_eval_infer.config">
+train_eval_infer.config
+<a></b>
+
+<pre>
+[infer3d] 
+mask_overlay  = True
+;Specify ".mp4" or ".gif".
+;video_fileformat  = ".mp4"
+video_fileformat  = ".gif"
+</pre>
+<br>
+<b>overlays.gif</b><br>
+<img src="./projects/TensorFlowFlexUNet/MICCAI-FeTS2021-T2W-Subset/video_3d/overlays.gif">
+<br>
+
 <h3>
 References
 </h3>
